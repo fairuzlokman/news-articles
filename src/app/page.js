@@ -1,7 +1,7 @@
 export default function Home() {
 	return (
 		<div>
-			<p>News Articles</p>
+			<p className="text-xl font-semibold">News Articles</p>
 		</div>
 	);
 }
