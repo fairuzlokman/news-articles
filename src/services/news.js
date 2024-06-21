@@ -1,11 +1,11 @@
 import api from "./api";
 
 export const getEverything = async () => {
-	const response = await api.get(`/everything`);
+	const response = await api.get(`/everything?q=apple`);
 	return response.data;
 };
 
-export const getTopHeadlines = async () => {
-	const response = await api.get(`/top-headlines`);
+export const getHeadlines = async () => {
+	const response = await api.get(`/top-headlines?country=my`);
 	return response.data;
 };
