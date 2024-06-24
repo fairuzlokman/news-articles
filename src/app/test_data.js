@@ -1,266 +1,270 @@
 export const testData = {
-    "status": "ok",
-    "totalResults": 38,
-    "articles": [
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "theSun",
-            "title": "Another official from UK PM Sunak's party probed over election bets, Sunday Times reports - theSun",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMie2h0dHBzOi8vdGhlc3VuLm15L3dvcmxkL2Fub3RoZXItb2ZmaWNpYWwtZnJvbS11ay1wbS1zdW5hay1zLXBhcnR5LXByb2JlZC1vdmVyLWVsZWN0aW9uLWJldHMtc3VuZGF5LXRpbWVzLXJlcG9ydHMtR0YxMjYwNjY0MtIBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-23T03:23:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "Free Malaysia Today",
-            "title": "Immediate approvals for diesel subsidy applications - Free Malaysia Today",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMicWh0dHBzOi8vd3d3LmZyZWVtYWxheXNpYXRvZGF5LmNvbS9jYXRlZ29yeS9uYXRpb24vMjAyNC8wNi8yMy9pbW1lZGlhdGUtYXBwcm92YWxzLWZvci1kaWVzZWwtc3Vic2lkeS1hcHBsaWNhdGlvbnMv0gEA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-23T03:13:38Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "The Star Online",
-            "title": "Developing a drug to block the bitter taste of medicine - The Star Online",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMibmh0dHBzOi8vd3d3LnRoZXN0YXIuY29tLm15L2xpZmVzdHlsZS9oZWFsdGgvMjAyNC8wNi8yMy9kZXZlbG9waW5nLWEtZHJ1Zy10by1ibG9jay10aGUtYml0dGVyLXRhc3RlLW9mLW1lZGljaW5l0gEA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-23T03:00:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "AMBCrypto News",
-            "title": "Cardano’s long-term price will depend on THESE factors - AMBCrypto News",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiTGh0dHBzOi8vYW1iY3J5cHRvLmNvbS9jYXJkYW5vcy1sb25nLXRlcm0tcHJpY2Utd2lsbC1kZXBlbmQtb24tdGhlc2UtZmFjdG9ycy_SAVBodHRwczovL2FtYmNyeXB0by5jb20vY2FyZGFub3MtbG9uZy10ZXJtLXByaWNlLXdpbGwtZGVwZW5kLW9uLXRoZXNlLWZhY3RvcnMvYW1wLw?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-23T02:04:35Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "New Straits Times",
-            "title": "Azeem, Shereen miss direct Olympic qualification, await wild card decision - New Straits Times",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMidGh0dHBzOi8vd3d3Lm5zdC5jb20ubXkvc3BvcnRzL290aGVycy8yMDI0LzA2LzEwNjcwNTcvYXplZW0tc2hlcmVlbi1taXNzLWRpcmVjdC1vbHltcGljLXF1YWxpZmljYXRpb24tYXdhaXQtd2lsZC1jYXJk0gF4aHR0cHM6Ly93d3cubnN0LmNvbS5teS9hbXAvc3BvcnRzL290aGVycy8yMDI0LzA2LzEwNjcwNTcvYXplZW0tc2hlcmVlbi1taXNzLWRpcmVjdC1vbHltcGljLXF1YWxpZmljYXRpb24tYXdhaXQtd2lsZC1jYXJk?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-23T00:16:44Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "The Star Online",
-            "title": "130-year-old Sg Bakap hospital to get new building - The Star Online",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiZGh0dHBzOi8vd3d3LnRoZXN0YXIuY29tLm15L25ld3MvbmF0aW9uLzIwMjQvMDYvMjMvMTMwLXllYXItb2xkLXNnLWJha2FwLWhvc3BpdGFsLXRvLWdldC1uZXctYnVpbGRpbmfSAQA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-23T00:07:22Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "The Star Online",
-            "title": "JB enterprises feeling the strain - The Star Online",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiU2h0dHBzOi8vd3d3LnRoZXN0YXIuY29tLm15L25ld3MvbmF0aW9uLzIwMjQvMDYvMjMvamItZW50ZXJwcmlzZXMtZmVlbGluZy10aGUtc3RyYWlu0gEA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T23:19:53Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "The Sun",
-            "title": "Portugal star Goncalo Ramos left limping after being slide tackled by panicking steward after chaotic Euro... - The Sun",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiW2h0dHBzOi8vd3d3LnRoZXN1bi5jby51ay9zcG9ydC8yODY3NjI3Mi9nb25jYWxvLXJhbW9zLXBvcnR1Z2FsLXN0YXItbGltcGluZy1zdGV3YXJkLXRhY2tsZS_SAV9odHRwczovL3d3dy50aGVzdW4uY28udWsvc3BvcnQvMjg2NzYyNzIvZ29uY2Fsby1yYW1vcy1wb3J0dWdhbC1zdGFyLWxpbXBpbmctc3Rld2FyZC10YWNrbGUvYW1wLw?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T20:04:04Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "90min UK",
-            "title": "Turkey 0-3 Portugal: Player ratings as Roberto Martinez's side book place in Euro 2024 knockout rounds - 90min UK",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiQmh0dHBzOi8vd3d3LjkwbWluLmNvbS90dXJrZXktMC0zLXBvcnR1Z2FsLXBsYXllci1yYXRpbmdzLWV1cm8tMjAyNNIBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T17:56:07Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "Free Malaysia Today",
-            "title": "PKR, PN leaders lock horns on degrees and politicians - Free Malaysia Today",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMicmh0dHBzOi8vd3d3LmZyZWVtYWxheXNpYXRvZGF5LmNvbS9jYXRlZ29yeS9uYXRpb24vMjAyNC8wNi8yMi9wa3ItcG4tbGVhZGVycy1sb2NrLWhvcm5zLW9uLWRlZ3JlZXMtYW5kLXBvbGl0aWNpYW5zL9IBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T16:14:15Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "Free Malaysia Today",
-            "title": "PAS leaders dismiss talk about joining unity govt - Free Malaysia Today",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMib2h0dHBzOi8vd3d3LmZyZWVtYWxheXNpYXRvZGF5LmNvbS9jYXRlZ29yeS9uYXRpb24vMjAyNC8wNi8yMy9wYXMtbGVhZGVycy1kaXNtaXNzLXRhbGstYWJvdXQtam9pbmluZy11bml0eS1nb3Z0L9IBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T16:13:49Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "theSun",
-            "title": "Japan Airlines flight makes emergency landing at Aomori Airport over suspected engine fire - theSun",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMifWh0dHBzOi8vdGhlc3VuLm15L3dvcmxkL2phcGFuLWFpcmxpbmVzLWZsaWdodC1tYWtlcy1lbWVyZ2VuY3ktbGFuZGluZy1hdC1hb21vcmktYWlycG9ydC1vdmVyLXN1c3BlY3RlZC1lbmdpbmUtZmlyZS1NRjEyNjA2MDgy0gEA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T15:05:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "Medscape",
-            "title": "Tirzepatide Significantly Reduces Sleep Disruptions - Medscape",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiZWh0dHBzOi8vd3d3Lm1lZHNjYXBlLmNvbS92aWV3YXJ0aWNsZS90aXJ6ZXBhdGlkZS1zaWduaWZpY2FudGx5LXJlZHVjZXMtc2xlZXAtZGlzcnVwdGlvbnMtMjAyNGExMDAwYm0x0gEA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T14:25:05Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "The Star Online",
-            "title": "Search for four missing fishermen to expand to coastal areas of Tanjung Segenting - The Star Online",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMigwFodHRwczovL3d3dy50aGVzdGFyLmNvbS5teS9uZXdzL25hdGlvbi8yMDI0LzA2LzIyL3NlYXJjaC1mb3ItZm91ci1taXNzaW5nLWZpc2hlcm1lbi10by1leHBhbmQtdG8tY29hc3RhbC1hcmVhcy1vZi10YW5qdW5nLXNlZ2VudGluZ9IBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T12:27:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "Good Good Good",
-            "title": "11 medical breakthroughs that could forever change cancer treatment: 'There is good news' - Good Good Good",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiV2h0dHBzOi8vd3d3Lmdvb2Rnb29kZ29vZC5jby9hcnRpY2xlcy9jYW5jZXItdHJlYXRtZW50LWRpYWdub3Npcy1icmVha3Rocm91Z2hzLWdvb2QtbmV3c9IBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T12:00:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "theSun",
-            "title": "Joining BRICS will not adversely affect Malaysia's E&E sector - theSun",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiamh0dHBzOi8vdGhlc3VuLm15L2xvY2FsLW5ld3Mvam9pbmluZy1icmljcy13aWxsLW5vdC1hZHZlcnNlbHktYWZmZWN0LW1hbGF5c2lhLXMtZWUtc2VjdG9yLWNoYW5nLUhGMTI2MDU0NTPSAQA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T11:03:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "The Star Online",
-            "title": "Muscle dysmorphia: Men are also struggling with unrealistic beauty standards - The Star Online",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMigQFodHRwczovL3d3dy50aGVzdGFyLmNvbS5teS9saWZlc3R5bGUvc3R5bGUvMjAyNC8wNi8yMi9tdXNjbGUtZHlzbW9ycGhpYS1tZW4tYXJlLWFsc28tc3RydWdnbGluZy13aXRoLXVucmVhbGlzdGljLWJlYXV0eS1zdGFuZGFyZHPSAQA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T11:00:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "Notebookcheck.net",
-            "title": "LG gram Pro 2-in-1 16T90SP review - Light and powerful - Notebookcheck.net",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiYGh0dHBzOi8vd3d3Lm5vdGVib29rY2hlY2submV0L0xHLWdyYW0tUHJvLTItaW4tMS0xNlQ5MFNQLXJldmlldy1MaWdodC1hbmQtcG93ZXJmdWwuODUwMjIwLjAuaHRtbNIBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T09:32:15Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "The Star Online",
-            "title": "Govt never defended parties collaborating with Israel, says minister's aide - The Star Online",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMifmh0dHBzOi8vd3d3LnRoZXN0YXIuY29tLm15L25ld3MvbmF0aW9uLzIwMjQvMDYvMjIvZ292dC1uZXZlci1kZWZlbmRlZC1wYXJ0aWVzLWNvbGxhYm9yYXRpbmctd2l0aC1pc3JhZWwtc2F5cy1taW5pc3RlcjAzOXMtYWlkZdIBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T08:14:00Z",
-            "content": null
-        },
-        {
-            "source": {
-                "id": "google-news",
-                "name": "Google News"
-            },
-            "author": "Apple",
-            "title": "Apple The Exchange TRX now open in Kuala Lumpur - Apple",
-            "description": null,
-            "url": "https://news.google.com/rss/articles/CBMiV2h0dHBzOi8vd3d3LmFwcGxlLmNvbS9uZXdzcm9vbS8yMDI0LzA2L2FwcGxlLXRoZS1leGNoYW5nZS10cngtbm93LW9wZW4taW4ta3VhbGEtbHVtcHVyL9IBAA?oc=5",
-            "urlToImage": null,
-            "publishedAt": "2024-06-22T08:06:21Z",
-            "content": null
-        }
-    ]
-}
+	status: "ok",
+	totalResults: 38,
+	articles: [
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "New Straits Times",
+			title: "12-year-old prodigy set to graduate high school and attend NYU - New Straits Times",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMibmh0dHBzOi8vd3d3Lm5zdC5jb20ubXkvd29ybGQvd29ybGQvMjAyNC8wNi8xMDY3MjMwLzEyLXllYXItb2xkLXByb2RpZ3ktc2V0LWdyYWR1YXRlLWhpZ2gtc2Nob29sLWFuZC1hdHRlbmQtbnl10gFyaHR0cHM6Ly93d3cubnN0LmNvbS5teS9hbXAvd29ybGQvd29ybGQvMjAyNC8wNi8xMDY3MjMwLzEyLXllYXItb2xkLXByb2RpZ3ktc2V0LWdyYWR1YXRlLWhpZ2gtc2Nob29sLWFuZC1hdHRlbmQtbnl1?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T06:46:09Z",
+			content: null,
+		},
+		{
+			source: {
+				id: null,
+				name: "YouTube",
+			},
+			author: null,
+			title: "Huawei breakthroughs in fields from operating systems to AI | World Business Watch | WION - WION",
+			description: null,
+			url: "https://www.youtube.com/watch?v=hFmD9ZO--fw",
+			urlToImage: null,
+			publishedAt: "2024-06-23T05:35:44Z",
+			content:
+				"Your browser isnt supported anymore. Update it to get the best YouTube experience and our latest features. Learn more\r\nRemind me later",
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "The Star Online",
+			title: "Hong Kong patient in critical condition after feeding tube left in airway for over 24 hours - The Star Online",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMimgFodHRwczovL3d3dy50aGVzdGFyLmNvbS5teS9hc2VhbnBsdXMvYXNlYW5wbHVzLW5ld3MvMjAyNC8wNi8yMy9ob25nLWtvbmctcGF0aWVudC1pbi1jcml0aWNhbC1jb25kaXRpb24tYWZ0ZXItZmVlZGluZy10dWJlLWxlZnQtaW4tYWlyd2F5LWZvci1vdmVyLTI0LWhvdXJz0gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T05:28:00Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "New Straits Times",
+			title: "Operation red light: Police raid uncovers foreign prostitution hub in KL - New Straits Times",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiemh0dHBzOi8vd3d3Lm5zdC5jb20ubXkvbmV3cy9jcmltZS1jb3VydHMvMjAyNC8wNi8xMDY3MjAwL29wZXJhdGlvbi1yZWQtbGlnaHQtcG9saWNlLXJhaWQtdW5jb3ZlcnMtZm9yZWlnbi1wcm9zdGl0dXRpb24taHVi0gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T05:18:08Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "CNA",
+			title: "Philippines not in business of instigating wars, says President Marcos - CNA",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiZmh0dHBzOi8vd3d3LmNoYW5uZWxuZXdzYXNpYS5jb20vYXNpYS9waGlsaXBwaW5lcy1zb3V0aC1jaGluYS1zZWEtcHJlc2lkZW50LWZlcmRpbmFuZC1tYXJjb3MtanItNDQzMDA0MdIBAA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T04:57:00Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "Malaysiakini",
+			title: "From astronaut ambition to advocacy through animation - Malaysiakini",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiJmh0dHBzOi8vbS5tYWxheXNpYWtpbmkuY29tL25ld3MvNzA5NTQ50gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T03:10:00Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "The Star Online",
+			title: "Developing a drug to block the bitter taste of medicine - The Star Online",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMibmh0dHBzOi8vd3d3LnRoZXN0YXIuY29tLm15L2xpZmVzdHlsZS9oZWFsdGgvMjAyNC8wNi8yMy9kZXZlbG9waW5nLWEtZHJ1Zy10by1ibG9jay10aGUtYml0dGVyLXRhc3RlLW9mLW1lZGljaW5l0gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T03:00:00Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "The Star Online",
+			title: "Skipper of capsized fishing boat found drowned off Tanjung Segenting - The Star Online",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMidmh0dHBzOi8vd3d3LnRoZXN0YXIuY29tLm15L25ld3MvbmF0aW9uLzIwMjQvMDYvMjMvc2tpcHBlci1vZi1jYXBzaXplZC1maXNoaW5nLWJvYXQtZm91bmQtZHJvd25lZC1vZmYtdGFuanVuZy1zZWdlbnRpbmfSAQA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T02:52:00Z",
+			content: null,
+		},
+		{
+			source: {
+				id: null,
+				name: "Ambcrypto.com",
+			},
+			author: "Jai Hamid",
+			title: "Cardano’s long-term price will depend on THESE factors - AMBCrypto News",
+			description:
+				"A major network upgrade is coming, and that could be good news for Cardano.",
+			url: "https://ambcrypto.com/cardanos-long-term-price-will-depend-on-these-factors/",
+			urlToImage:
+				"https://ambcrypto.com/wp-content/uploads/2024/06/News-Articles-FI-Editors-9-1000x600.webp",
+			publishedAt: "2024-06-23T02:04:35Z",
+			content:
+				"<ul><li>Cardano’s price consolidated around $0.37, with fluctuations indicating bearish momentum</li><li>Uptick in new adoption pointed to growing interest in upcoming upgrades</li></ul>Cardano is ex… [+2435 chars]",
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "The Borneo Post",
+			title: "Anwar: Sabah, Sarawak exempted from subsidy rationalisation due to regions' heavy reliance on diesel - The Borneo Post",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiiwFodHRwczovL3d3dy50aGVib3JuZW9wb3N0LmNvbS8yMDI0LzA2LzIzL2Fud2FyLXNhYmFoLXNhcmF3YWstZXhlbXB0ZWQtZnJvbS1zdWJzaWR5LXJhdGlvbmFsaXNhdGlvbi1kdWUtdG8tcmVnaW9ucy1oZWF2eS1yZWxpYW5jZS1vbi1kaWVzZWwv0gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T01:13:12Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "Free Malaysia Today",
+			title: "Malays became divided under my successors, says Dr M - Free Malaysia Today",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMicWh0dHBzOi8vd3d3LmZyZWVtYWxheXNpYXRvZGF5LmNvbS9jYXRlZ29yeS9uYXRpb24vMjAyNC8wNi8yMy9tYWxheXMtYmVjYW1lLWRpdmlkZWQtdW5kZXItbXktc3VjY2Vzc29ycy1zYXlzLWRyLW0v0gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T01:00:04Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "New Straits Times",
+			title: "Azeem, Shereen miss direct Olympic qualification, await wild card decision - New Straits Times",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMidGh0dHBzOi8vd3d3Lm5zdC5jb20ubXkvc3BvcnRzL290aGVycy8yMDI0LzA2LzEwNjcwNTcvYXplZW0tc2hlcmVlbi1taXNzLWRpcmVjdC1vbHltcGljLXF1YWxpZmljYXRpb24tYXdhaXQtd2lsZC1jYXJk0gF4aHR0cHM6Ly93d3cubnN0LmNvbS5teS9hbXAvc3BvcnRzL290aGVycy8yMDI0LzA2LzEwNjcwNTcvYXplZW0tc2hlcmVlbi1taXNzLWRpcmVjdC1vbHltcGljLXF1YWxpZmljYXRpb24tYXdhaXQtd2lsZC1jYXJk?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-23T00:16:44Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "Malay Mail",
+			title: "EU and China set for talks on planned electric vehicle tariffs - Malay Mail",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMidWh0dHBzOi8vd3d3Lm1hbGF5bWFpbC5jb20vbmV3cy9tb25leS8yMDI0LzA2LzIzL2V1LWFuZC1jaGluYS1zZXQtZm9yLXRhbGtzLW9uLXBsYW5uZWQtZWxlY3RyaWMtdmVoaWNsZS10YXJpZmZzLzE0MTA0NNIBeWh0dHBzOi8vd3d3Lm1hbGF5bWFpbC5jb20vYW1wL25ld3MvbW9uZXkvMjAyNC8wNi8yMy9ldS1hbmQtY2hpbmEtc2V0LWZvci10YWxrcy1vbi1wbGFubmVkLWVsZWN0cmljLXZlaGljbGUtdGFyaWZmcy8xNDEwNDQ?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T23:53:02Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "ESPN",
+			title: "Ronaldo's declining ability could hurt Portugal at Euro 2024 - ESPN",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiZmh0dHBzOi8vZ2xvYmFsLmVzcG4uY29tL2Zvb3RiYWxsL3N0b3J5L18vaWQvNDA0MDg0Mjgvcm9uYWxkby1kZWNsaW5pbmctYWJpbGl0eS1odXJ0LXBvcnR1Z2FsLWV1cm8tMjAyNNIBAA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T20:34:42Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "90min UK",
+			title: "Turkey 0-3 Portugal: Player ratings as Roberto Martinez's side book place in Euro 2024 knockout rounds - 90min UK",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiQmh0dHBzOi8vd3d3LjkwbWluLmNvbS90dXJrZXktMC0zLXBvcnR1Z2FsLXBsYXllci1yYXRpbmdzLWV1cm8tMjAyNNIBAA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T17:56:07Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "Free Malaysia Today",
+			title: "PKR, PN leaders lock horns on degrees and politicians - Free Malaysia Today",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMicmh0dHBzOi8vd3d3LmZyZWVtYWxheXNpYXRvZGF5LmNvbS9jYXRlZ29yeS9uYXRpb24vMjAyNC8wNi8yMi9wa3ItcG4tbGVhZGVycy1sb2NrLWhvcm5zLW9uLWRlZ3JlZXMtYW5kLXBvbGl0aWNpYW5zL9IBAA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T16:14:15Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "theSun",
+			title: "Japan Airlines flight makes emergency landing at Aomori Airport over suspected engine fire - theSun",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMifWh0dHBzOi8vdGhlc3VuLm15L3dvcmxkL2phcGFuLWFpcmxpbmVzLWZsaWdodC1tYWtlcy1lbWVyZ2VuY3ktbGFuZGluZy1hdC1hb21vcmktYWlycG9ydC1vdmVyLXN1c3BlY3RlZC1lbmdpbmUtZmlyZS1NRjEyNjA2MDgy0gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T15:05:00Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "Medscape",
+			title: "Tirzepatide Significantly Reduces Sleep Disruptions - Medscape",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiZWh0dHBzOi8vd3d3Lm1lZHNjYXBlLmNvbS92aWV3YXJ0aWNsZS90aXJ6ZXBhdGlkZS1zaWduaWZpY2FudGx5LXJlZHVjZXMtc2xlZXAtZGlzcnVwdGlvbnMtMjAyNGExMDAwYm0x0gEA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T14:25:05Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "The Straits Times",
+			title: "China star Fan Bingbing makes waves in Malaysia, on social media as Melaka's tourism ambassador - The Straits Times",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMijAFodHRwczovL3d3dy5zdHJhaXRzdGltZXMuY29tL2FzaWEvc2UtYXNpYS9jaGluZXNlLXN0YXItZmFuLWJpbmdiaW5nLW1ha2VzLXdhdmVzLWluLW1hbGF5c2lhLWFuZC1vbi1zb2NpYWwtbWVkaWEtYXMtbWVsYWthLXRvdXJpc20tYW1iYXNzYWRvctIBAA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T12:50:00Z",
+			content: null,
+		},
+		{
+			source: {
+				id: "google-news",
+				name: "Google News",
+			},
+			author: "Good Good Good",
+			title: "11 medical breakthroughs that could forever change cancer treatment: 'There is good news' - Good Good Good",
+			description: null,
+			url: "https://news.google.com/rss/articles/CBMiV2h0dHBzOi8vd3d3Lmdvb2Rnb29kZ29vZC5jby9hcnRpY2xlcy9jYW5jZXItdHJlYXRtZW50LWRpYWdub3Npcy1icmVha3Rocm91Z2hzLWdvb2QtbmV3c9IBAA?oc=5",
+			urlToImage: null,
+			publishedAt: "2024-06-22T12:00:00Z",
+			content: null,
+		},
+	],
+};
