@@ -86,12 +86,12 @@ export default function Home() {
 								className="object-cover w-full h-[45vh]"
 							/>
 						) : (
-							<div className="h-[45vh] w-full flex items-center justify-center bg-white mt-5 mb-[30px]">
+							<div className="h-[45vh] text-xl w-full flex gap-2 items-center justify-center bg-white mt-5 mb-[30px]">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
 									fill="currentColor"
-									className="size-14"
+									className="size-10"
 								>
 									<path
 										fillRule="evenodd"
@@ -100,6 +100,7 @@ export default function Home() {
 									/>
 									<path d="M18.75 6.75h1.875c.621 0 1.125.504 1.125 1.125V18a1.5 1.5 0 0 1-3 0V6.75Z" />
 								</svg>
+								<i>The Old Newspaper</i>
 							</div>
 						)}
 						<p className="text-3xl font-semibold lg:text-4xl line-clamp-3">
