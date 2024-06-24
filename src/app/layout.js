@@ -20,7 +20,7 @@ const poppins = localFont({
 });
 
 export const metadata = {
-	title: "Old Newspaper",
+	title: "The Old Newspaper",
 	description:
 		"Rediscover the charm of vintage newspapers with 'Old Newspaper' - your digital gateway to classic news stories and historical articles.",
 };
