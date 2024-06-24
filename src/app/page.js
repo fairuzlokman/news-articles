@@ -27,16 +27,16 @@ export default function Home() {
 	// 	queryFn: getEverything,
 	// });
 
-	const { data, isPending } = useQuery({
-		queryKey: ["headlines"],
-		queryFn: getHeadlines,
-	});
+	// const { data, isPending } = useQuery({
+	// 	queryKey: ["headlines"],
+	// 	queryFn: getHeadlines,
+	// });
 
-	// const isPending = false;
+	const isPending = false;
 
 	if (isPending) return <p>Loading...</p>;
 
-	const [heroData, ...remainingData] = data.articles;
+	const [heroData, ...remainingData] = testData.articles;
 
 	return (
 		<div className="relative bg-cover bg-default-image">
@@ -80,10 +80,10 @@ export default function Home() {
 						{heroData.urlToImage ? (
 							<Image
 								src={heroData.urlToImage}
-								alt={`${title} image`}
+								alt={`${heroData.title} image`}
 								width={500}
 								height={500}
-								className="object-cover w-full h-[45vh]"
+								className="object-cover w-full h-[45vh] mt-5 mb-[30px]"
 							/>
 						) : (
 							<div className="h-[45vh] text-xl w-full flex gap-2 items-center justify-center bg-white mt-5 mb-[30px]">
