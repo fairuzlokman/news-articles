@@ -7,8 +7,8 @@ module.exports = {
 	],
 	theme: {
 		extend: {
-			fontFamily: {
-				sans: ["var(--font-poppins)"],
+			backgroundImage: {
+				"default-image": "url(/image/default-image.jpg)",
 			},
 		},
 	},
