@@ -40,9 +40,9 @@ export default function Home() {
 	return (
 		<div className="relative bg-cover bg-default-image">
 			<div className="absolute w-screen h-screen bg-black/30" />
-			<div className="relative z-50 flex items-center justify-between px-8 py-3 bg-white shadow-md">
+			<div className="relative z-50 flex items-center justify-between px-[30px] py-4 bg-white shadow-md">
 				<i>The Old Newspaper</i>
-				<div className="flex gap-8">
+				<div className="flex gap-[30px]">
 					{searchSuggestions.map((item, index) => (
 						<p key={index} className="text-sm">
 							{item}
@@ -62,7 +62,7 @@ export default function Home() {
 					</svg>
 				</div>
 			</div>
-			<div className="max-w-[1280px] z-10 relative m-auto grid h-[calc(100vh-48px)] grid-cols-4">
+			<div className="max-w-[1280px] z-10 relative m-auto grid h-[calc(100vh-56px)] grid-cols-4">
 				<Link
 					href={heroData.url}
 					target="_blank"
