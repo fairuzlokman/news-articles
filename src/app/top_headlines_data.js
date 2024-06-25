@@ -1,4 +1,4 @@
-export const testData = {
+export const topHeadlinesData = {
 	status: "ok",
 	totalResults: 38,
 	articles: [
