@@ -25,7 +25,7 @@ const Page = ({ params }) => {
 			<div className="absolute w-full h-full bg-black/30" />
 			<Header />
 			<div className="overflow-y-scroll h-[calc(100vh-56px)] relative z-10 no-scrollbar">
-				<div className="max-w-[1240px] flex flex-col gap-1 m-auto relative">
+				<div className="max-w-[1280px] px-5 flex flex-col gap-1 m-auto relative">
 					<div className="px-6 py-3 bg-white">
 						<p>
 							<span className="font-semibold">Keyword:</span>{" "}
