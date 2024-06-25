@@ -1,29 +1,27 @@
 "use client";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { getHeadlines } from "@/services/news";
 import Link from "next/link";
-import { topHeadlinesData } from "./top_headlines_data";
 import dateFormatter from "@/helper/dateFormatter";
 import getRelativeTime from "@/helper/getRelativeTime";
 import Image from "next/image";
 import Header from "@/components/Header";
+import LoadingState from "@/components/LoadingState";
 
 export default function Home() {
-	// const { data, isPending, fetchNextPage, isFetchingNextPage } =
-	// 	useInfiniteQuery({
-	// 		queryKey: ["headlines"],
-	// 		queryFn: ({ pageParam = 1 }) => getHeadlines({ page: pageParam }),
-	// 		getNextPageParam: (lastPage) => {
-	// 			const totalPages = Math.ceil(lastPage.totalResults / 10);
-	// 			if (lastPage.nextPage - 1 < totalPages) {
-	// 				return lastPage.nextPage;
-	// 			}
-	// 		},
-	// 	});
+	const { data, isPending, fetchNextPage, isFetchingNextPage } =
+		useInfiniteQuery({
+			queryKey: ["headlines"],
+			queryFn: ({ pageParam = 1 }) => getHeadlines({ page: pageParam }),
+			getNextPageParam: (lastPage) => {
+				const totalPages = Math.ceil(lastPage.totalResults / 10);
+				if (lastPage.nextPage - 1 < totalPages) {
+					return lastPage.nextPage;
+				}
+			},
+		});
 
-	const isPending = true;
-
-	if (isPending) return <p>Loading...</p>;
+	if (isPending) return <LoadingState />;
 
 	const hasNextPage = !data.pageParams.includes(false);
 

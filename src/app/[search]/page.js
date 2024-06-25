@@ -3,30 +3,28 @@ import React from "react";
 import Header from "@/components/Header";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { getEverything } from "@/services/news";
-import { everythingData } from "../everything_data";
 import Link from "next/link";
 import dateFormatter from "@/helper/dateFormatter";
 import Image from "next/image";
+import LoadingState from "@/components/LoadingState";
 
 const Page = ({ params }) => {
 	const search = decodeURIComponent(params.search);
 
-	// const { data, isPending, fetchNextPage, isFetchingNextPage } =
-	// 	useInfiniteQuery({
-	// 		queryKey: ["everything", search],
-	// 		queryFn: ({ pageParam = 1 }) =>
-	// 			getEverything({ page: pageParam, search }),
-	// 		getNextPageParam: (lastPage) => {
-	// 			const totalPages = Math.ceil(lastPage.totalResults / 10);
-	// 			if (lastPage.nextPage - 1 < totalPages) {
-	// 				return lastPage.nextPage;
-	// 			} else return false;
-	// 		},
-	// 	});
+	const { data, isPending, fetchNextPage, isFetchingNextPage } =
+		useInfiniteQuery({
+			queryKey: ["everything", search],
+			queryFn: ({ pageParam = 1 }) =>
+				getEverything({ page: pageParam, search }),
+			getNextPageParam: (lastPage) => {
+				const totalPages = Math.ceil(lastPage.totalResults / 10);
+				if (lastPage.nextPage - 1 < totalPages) {
+					return lastPage.nextPage;
+				} else return false;
+			},
+		});
 
-	const isPending = true;
-
-	if (isPending) return <p>Loading...</p>;
+	if (isPending) return <LoadingState />;
 
 	const hasNextPage = !data.pageParams.includes(false);
 
