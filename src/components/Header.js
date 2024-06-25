@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Input } from "./ui/input";
 import { useRouter } from "next/navigation";
 
@@ -20,6 +20,13 @@ const Header = () => {
 	const router = useRouter();
 	const [isSearching, setIsSearching] = useState(false);
 	const [search, setSearch] = useState("");
+	const inputRef = useRef(null);
+
+	useEffect(() => {
+		if (isSearching && inputRef.current) {
+			inputRef.current.focus();
+		}
+	}, [isSearching]);
 
 	const handleOnChange = (e) => {
 		setSearch(e.target.value);
@@ -27,7 +34,11 @@ const Header = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		router.push(`/${search}`);
+		if (search.trim() !== "") {
+			router.push(`/${search}`);
+		} else {
+			setIsSearching(!isSearching);
+		}
 	};
 
 	return (
@@ -45,6 +56,7 @@ const Header = () => {
 							value={search}
 							onChange={handleOnChange}
 							className="w-[300px] text-sm"
+							ref={inputRef}
 						/>
 						<button type="submit">
 							<svg
