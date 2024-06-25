@@ -1,24 +1,35 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { getHeadlines } from "@/services/news";
 import Link from "next/link";
-import { topHeadlinesData } from "./top_headlines_data";
 import dateFormatter from "@/helper/dateFormatter";
 import getRelativeTime from "@/helper/getRelativeTime";
 import Image from "next/image";
 import Header from "@/components/Header";
+import LoadingState from "@/components/LoadingState";
 
 export default function Home() {
-	const { data, isPending } = useQuery({
-		queryKey: ["headlines"],
-		queryFn: getHeadlines,
-	});
+	const { data, isPending, fetchNextPage, isFetchingNextPage } =
+		useInfiniteQuery({
+			queryKey: ["headlines"],
+			queryFn: ({ pageParam = 1 }) => getHeadlines({ page: pageParam }),
+			getNextPageParam: (lastPage) => {
+				const totalPages = Math.ceil(lastPage.totalResults / 10);
+				if (lastPage.nextPage - 1 < totalPages) {
+					return lastPage.nextPage;
+				}
+			},
+		});
 
-	// const isPending = false;
+	if (isPending) return <LoadingState />;
 
-	if (isPending) return <p>Loading...</p>;
+	const hasNextPage = !data.pageParams.includes(false);
 
-	const [heroData, ...remainingData] = data.articles;
+	const articles = data.pages.reduce((acc, page) => {
+		return [...acc, ...page.articles];
+	}, []);
+
+	const [mainArticle, ...remainingArticles] = articles;
 
 	return (
 		<div className="relative bg-cover bg-default-image">
@@ -26,22 +37,40 @@ export default function Home() {
 			<Header />
 			<div className="max-w-[1280px] z-10 relative m-auto grid h-[calc(100vh-56px)] grid-cols-5">
 				<Link
-					href={heroData.url}
+					href={mainArticle.url}
 					target="_blank"
-					className="col-span-3 bg-white/85"
+					className="col-span-3 bg-white/85 group"
 				>
 					<div className="flex flex-col h-full p-[30px]">
-						<div className="flex gap-2">
-							<p>{heroData.author ?? heroData.source.name}</p>|
-							<p className="text-black/50">
-								{dateFormatter(heroData.publishedAt)}
-							</p>
+						<div className="flex items-center justify-between">
+							<div className="flex gap-2">
+								<p>
+									{mainArticle.author ??
+										mainArticle.source.name}
+								</p>
+								|
+								<p className="text-black/50">
+									{dateFormatter(mainArticle.publishedAt)}
+								</p>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								className="transition-all size-5 group-hover:-mt-1 group-hover:-mr-1"
+							>
+								<path
+									fillRule="evenodd"
+									d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+									clipRule="evenodd"
+								/>
+							</svg>
 						</div>
 						<div className="w-full h-[45vh] mt-5 mb-[30px] rounded-[4.5px] overflow-clip">
-							{heroData.urlToImage ? (
+							{mainArticle.urlToImage ? (
 								<Image
-									src={heroData.urlToImage}
-									alt={`${heroData.title} image`}
+									src={mainArticle.urlToImage}
+									alt={`${mainArticle.title} image`}
 									width={500}
 									height={500}
 									className="object-cover w-full h-full"
@@ -67,18 +96,18 @@ export default function Home() {
 						</div>
 						<div className="space-y-2">
 							<p className="text-xl font-semibold line-clamp-3">
-								{heroData.title}
+								{mainArticle.title}
 							</p>
 							<p className="line-clamp-4">
-								{heroData.description}
+								{mainArticle.description}
 							</p>
 						</div>
 					</div>
 				</Link>
-				<div className="col-span-2 overflow-y-scroll bg-white scrollbar">
-					{...remainingData.map((item, index) => (
+				<div className="col-span-2 overflow-y-scroll bg-white">
+					{...remainingArticles.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
-							<div className="flex flex-col gap-2 p-6 transition-all border-b hover:bg-black/5">
+							<div className="flex flex-col gap-2 p-6 transition-all border-b group hover:bg-black/5">
 								<div className="flex gap-2 text-sm">
 									<p>{item.author ?? item.source.name}</p>|
 									<p className="text-black/50">
@@ -99,9 +128,24 @@ export default function Home() {
 								<p className="font-semibold truncate">
 									{item.title}
 								</p>
+								<p className="text-sm text-blue-600 group-hover:underline underline-offset-2">
+									Read more...
+								</p>
 							</div>
 						</Link>
 					))}
+					{hasNextPage && (
+						<div className="p-2">
+							<button
+								onClick={fetchNextPage}
+								className="w-full py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
+							>
+								{isFetchingNextPage
+									? "Loading..."
+									: "Load more"}
+							</button>
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
