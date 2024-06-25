@@ -68,7 +68,7 @@ const Header = () => {
 						<Input
 							value={search}
 							onChange={handleOnChange}
-							className="w-[300px] text-sm"
+							className="md:w-[300px] sm:w-[200px] w-[150px] text-sm"
 							ref={inputRef}
 						/>
 						<button type="submit">
