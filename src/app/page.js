@@ -28,14 +28,29 @@ export default function Home() {
 				<Link
 					href={heroData.url}
 					target="_blank"
-					className="col-span-3 bg-white/85"
+					className="col-span-3 bg-white/85 group"
 				>
 					<div className="flex flex-col h-full p-[30px]">
-						<div className="flex gap-2">
-							<p>{heroData.author ?? heroData.source.name}</p>|
-							<p className="text-black/50">
-								{dateFormatter(heroData.publishedAt)}
-							</p>
+						<div className="flex items-center justify-between">
+							<div className="flex gap-2">
+								<p>{heroData.author ?? heroData.source.name}</p>
+								|
+								<p className="text-black/50">
+									{dateFormatter(heroData.publishedAt)}
+								</p>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								className="transition-all size-5 group-hover:-mt-1 group-hover:-mr-1"
+							>
+								<path
+									fillRule="evenodd"
+									d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+									clipRule="evenodd"
+								/>
+							</svg>
 						</div>
 						<div className="w-full h-[45vh] mt-5 mb-[30px] rounded-[4.5px] overflow-clip">
 							{heroData.urlToImage ? (
@@ -99,7 +114,9 @@ export default function Home() {
 								<p className="font-semibold truncate">
 									{item.title}
 								</p>
-								<p className="text-sm text-blue-600 group-hover:underline underline-offset-2">Read more...</p>
+								<p className="text-sm text-blue-600 group-hover:underline underline-offset-2">
+									Read more...
+								</p>
 							</div>
 						</Link>
 					))}
