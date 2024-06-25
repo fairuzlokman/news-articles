@@ -33,7 +33,9 @@ export default function Home() {
 					<div className="flex flex-col h-full p-[30px]">
 						<div className="flex gap-2">
 							<p>{heroData.author ?? heroData.source.name}</p>|
-							<p>{dateFormatter(heroData.publishedAt)}</p>
+							<p className="text-black/50">
+								{dateFormatter(heroData.publishedAt)}
+							</p>
 						</div>
 						<div className="w-full h-[45vh] mt-5 mb-[30px]">
 							{heroData.urlToImage ? (
