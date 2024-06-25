@@ -1,6 +1,5 @@
-"use client";
-import { getHeadlines } from "@/services/news";
 import { useQuery } from "@tanstack/react-query";
+import { getHeadlines } from "@/services/news";
 import Link from "next/link";
 import { topHeadlinesData } from "./top_headlines_data";
 import dateFormatter from "@/helper/dateFormatter";
@@ -9,16 +8,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 
 export default function Home() {
-	// const { data, isPending } = useQuery({
-	// 	queryKey: ["headlines"],
-	// 	queryFn: getHeadlines,
-	// });
+	const { data, isPending } = useQuery({
+		queryKey: ["headlines"],
+		queryFn: getHeadlines,
+	});
 
-	const isPending = false;
+	// const isPending = false;
 
 	if (isPending) return <p>Loading...</p>;
 
-	const [heroData, ...remainingData] = topHeadlinesData.articles;
+	const [heroData, ...remainingData] = data.articles;
 
 	return (
 		<div className="relative bg-cover bg-default-image">
