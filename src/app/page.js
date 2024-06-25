@@ -37,7 +37,7 @@ export default function Home() {
 								{dateFormatter(heroData.publishedAt)}
 							</p>
 						</div>
-						<div className="w-full h-[45vh] mt-5 mb-[30px]">
+						<div className="w-full h-[45vh] mt-5 mb-[30px] rounded-[4.5px] overflow-clip">
 							{heroData.urlToImage ? (
 								<Image
 									src={heroData.urlToImage}
@@ -78,7 +78,7 @@ export default function Home() {
 				<div className="col-span-2 overflow-y-scroll bg-white scrollbar">
 					{...remainingData.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
-							<div className="flex flex-col gap-2 p-6 border-b">
+							<div className="flex flex-col gap-2 p-6 transition-all border-b hover:bg-black/5">
 								<div className="flex gap-2 text-sm">
 									<p>{item.author ?? item.source.name}</p>|
 									<p className="text-black/50">
@@ -92,7 +92,7 @@ export default function Home() {
 											alt={`${item.title} image`}
 											width={500}
 											height={500}
-											className="object-cover w-full h-full"
+											className="object-cover w-full h-full rounded-[4.5px]"
 										/>
 									</div>
 								)}
