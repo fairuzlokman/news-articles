@@ -1,7 +1,7 @@
 import api from "./api";
 
-export const getEverything = async (keyword) => {
-	const response = await api.get(`/everything?q=${keyword}`);
+export const getEverything = async (search) => {
+	const response = await api.get(`/everything?q=${search}`);
 	return response.data;
 };
 

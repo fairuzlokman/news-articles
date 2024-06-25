@@ -1,19 +1,19 @@
 "use client";
-import Header from "@/components/Header";
-import { getEverything } from "@/services/news";
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import Header from "@/components/Header";
+import { useQuery } from "@tanstack/react-query";
+import { getEverything } from "@/services/news";
 import { everythingData } from "../everything_data";
 import Link from "next/link";
 import dateFormatter from "@/helper/dateFormatter";
 import Image from "next/image";
 
 const Page = ({ params }) => {
-	const keyword = params.keyword;
+	const search = params.search;
 
 	// const { data, isPending } = useQuery({
-	// 	queryKey: ["everything", keyword],
-	// 	queryFn: () => getEverything(keyword),
+	// 	queryKey: ["everything", search],
+	// 	queryFn: () => getEverything(search),
 	// });
 
 	const isPending = false;
@@ -28,8 +28,8 @@ const Page = ({ params }) => {
 				<div className="max-w-[1280px] px-5 flex flex-col gap-1 m-auto relative">
 					<div className="px-6 py-3 bg-white">
 						<p>
-							<span className="font-semibold">Keyword:</span>{" "}
-							{keyword}
+							<span className="font-semibold">Search:</span>{" "}
+							{search}
 						</p>
 					</div>
 					{everythingData.articles.map((item, index) => (

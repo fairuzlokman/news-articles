@@ -5,4 +5,5 @@ const dateFormatter = (dateString) => {
 		return format(dateString, "d MMM yyyy, h:mm aaa");
 	} else return null;
 };
+
 export default dateFormatter;
