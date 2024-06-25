@@ -28,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={poppins.className}>
+			<body  cz-shortcut-listen="true" className={poppins.className}>
 				<ReactQueryClientProvider>{children}</ReactQueryClientProvider>
 			</body>
 		</html>
