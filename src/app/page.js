@@ -33,15 +33,15 @@ export default function Home() {
 
 	return (
 		<div className="relative bg-cover bg-default-image">
-			<div className="absolute w-full h-screen bg-black/30" />
+			<div className="absolute w-full h-full bg-black/30" />
 			<Header />
-			<div className="max-w-[1280px] z-10 relative m-auto grid h-[calc(100vh-56px)] grid-cols-5">
+			<div className="max-w-[1280px] z-10 relative m-auto grid md:h-[calc(100vh-56px)] md:grid-cols-5">
 				<Link
 					href={mainArticle.url}
 					target="_blank"
-					className="col-span-3 bg-white/85 group"
+					className="md:col-span-3 bg-white/85 group"
 				>
-					<div className="flex flex-col h-full p-[30px]">
+					<div className="flex flex-col md:h-full p-[30px]">
 						<div className="flex items-center justify-between">
 							<div className="flex gap-2">
 								<p>
@@ -66,7 +66,7 @@ export default function Home() {
 								/>
 							</svg>
 						</div>
-						<div className="w-full h-[45vh] mt-5 mb-[30px] rounded-[4.5px] overflow-clip">
+						<div className="w-full aspect-video md:aspect-auto md:h-[45vh] mt-5 mb-[30px] rounded-[4.5px] overflow-clip">
 							{mainArticle.urlToImage ? (
 								<Image
 									src={mainArticle.urlToImage}
@@ -98,13 +98,13 @@ export default function Home() {
 							<p className="text-xl font-semibold line-clamp-3">
 								{mainArticle.title}
 							</p>
-							<p className="line-clamp-4">
+							<p className="md:line-clamp-4">
 								{mainArticle.description}
 							</p>
 						</div>
 					</div>
 				</Link>
-				<div className="col-span-2 overflow-y-scroll bg-white">
+				<div className="overflow-auto bg-white md:col-span-2">
 					{...remainingArticles.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
 							<div className="flex flex-col gap-2 p-6 transition-all border-b group hover:bg-black/5">
