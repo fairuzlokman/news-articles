@@ -1,3 +1,4 @@
+"use client";
 import { useQuery } from "@tanstack/react-query";
 import { getHeadlines } from "@/services/news";
 import Link from "next/link";

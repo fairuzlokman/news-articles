@@ -1,7 +1,8 @@
+"use client";
+import React from "react";
 import Header from "@/components/Header";
 import { useQuery } from "@tanstack/react-query";
 import { getEverything } from "@/services/news";
-import React from "react";
 import { everythingData } from "../everything_data";
 import Link from "next/link";
 import dateFormatter from "@/helper/dateFormatter";

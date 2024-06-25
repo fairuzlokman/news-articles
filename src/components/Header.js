@@ -77,7 +77,7 @@ const Header = () => {
 					{searchSuggestions.map((item, index) => (
 						<Link
 							key={index}
-							href={item.toLowerCase()}
+							href={item}
 							className="text-sm hover:underline hover:underline-offset-2"
 						>
 							{item}
