@@ -1,38 +1,50 @@
 "use client";
 import React from "react";
 import Header from "@/components/Header";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { getEverything } from "@/services/news";
-import { everythingData } from "../everything_data";
 import Link from "next/link";
 import dateFormatter from "@/helper/dateFormatter";
 import Image from "next/image";
+import LoadingState from "@/components/LoadingState";
 
 const Page = ({ params }) => {
-	const search = params.search;
+	const search = decodeURIComponent(params.search);
 
-	// const { data, isPending } = useQuery({
-	// 	queryKey: ["everything", search],
-	// 	queryFn: () => getEverything(search),
-	// });
+	const { data, isPending, fetchNextPage, isFetchingNextPage } =
+		useInfiniteQuery({
+			queryKey: ["everything", search],
+			queryFn: ({ pageParam = 1 }) =>
+				getEverything({ page: pageParam, search }),
+			getNextPageParam: (lastPage) => {
+				const totalPages = Math.ceil(lastPage.totalResults / 10);
+				if (lastPage.nextPage - 1 < totalPages) {
+					return lastPage.nextPage;
+				} else return false;
+			},
+		});
 
-	const isPending = false;
+	if (isPending) return <LoadingState />;
 
-	if (isPending) return <p>Loading...</p>;
+	const hasNextPage = !data.pageParams.includes(false);
+
+	const articles = data.pages.reduce((acc, page) => {
+		return [...acc, ...page.articles];
+	}, []);
 
 	return (
 		<div className="relative bg-fixed bg-cover bg-default-image">
 			<div className="absolute w-full h-full bg-black/30" />
 			<Header />
-			<div className="overflow-y-scroll h-[calc(100vh-56px)] relative z-10 no-scrollbar">
-				<div className="max-w-[1280px] px-5 flex flex-col gap-1 m-auto relative">
+			<div className="overflow-y-scroll h-[calc(100vh-56px)] relative z-10">
+				<div className="max-w-[1280px] px-5 pb-5 flex flex-col gap-1 m-auto relative">
 					<div className="px-6 py-3 bg-white">
 						<p>
 							<span className="font-semibold">Search:</span>{" "}
 							{search}
 						</p>
 					</div>
-					{everythingData.articles.map((item, index) => (
+					{articles.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
 							<div className="bg-white/85 rounded-[4.5px]">
 								<div className="flex gap-6 p-6 transition-all hover:bg-black/5 group">
@@ -104,6 +116,14 @@ const Page = ({ params }) => {
 							</div>
 						</Link>
 					))}
+					{hasNextPage && (
+						<button
+							onClick={fetchNextPage}
+							className="py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
+						>
+							{isFetchingNextPage ? "Loading..." : "Load more"}
+						</button>
+					)}
 				</div>
 			</div>
 		</div>
