@@ -102,6 +102,14 @@ export default function Home() {
 							</div>
 						</Link>
 					))}
+					<div className="p-2">
+						<button
+							// onClick={() => setPage((prev) => prev + 1)}
+							className="w-full py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
+						>
+							Load more
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

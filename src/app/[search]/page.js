@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "@/components/Header";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { getEverything } from "@/services/news";
@@ -9,25 +9,16 @@ import dateFormatter from "@/helper/dateFormatter";
 import Image from "next/image";
 
 const Page = ({ params }) => {
-	const search = params.search;
-	const [page, setPage] = useState(1);
-	const [list, setList] = useState([]);
+	const search = decodeURIComponent(params.search);
 
 	// const { data, isPending } = useQuery({
-	// 	queryKey: ["everything", page, search],
-	// 	queryFn: () => getEverything(page, search),
-	// 	keepPreviousData: true,
+	// 	queryKey: ["everything", search],
+	// 	queryFn: () => getEverything(1, search), // Fix page = 1 for now
 	// });
 
 	const isPending = false;
 
-	// useEffect(() => {
-	// 	if (!isPending && data) {
-	// 		setList((prev) => [...prev, ...data.articles]);
-	// 	}
-	// }, [data, isPending]);
-
-	// if (isPending) return <p>Loading...</p>;
+	if (isPending) return <p>Loading...</p>;
 
 	return (
 		<div className="relative bg-fixed bg-cover bg-default-image">
@@ -115,7 +106,7 @@ const Page = ({ params }) => {
 					))}
 					<button
 						onClick={() => setPage((prev) => prev + 1)}
-						className="py-2 text-sm font-semibold bg-white rounded-full"
+						className="py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
 					>
 						Load more
 					</button>

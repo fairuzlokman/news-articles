@@ -1,6 +1,6 @@
 import api from "./api";
 
-export const getEverything = async (page, search) => {
+export const getEverything = async (page = 1, search) => {
 	const response = await api.get("/everything", {
 		params: {
 			pageSize: 10,
@@ -11,9 +11,11 @@ export const getEverything = async (page, search) => {
 	return response.data;
 };
 
-export const getHeadlines = async () => {
+export const getHeadlines = async (page = 1) => {
 	const response = await api.get(`/top-headlines`, {
 		params: {
+			pageSize: 10,
+			page: page,
 			country: "my",
 		},
 	});
