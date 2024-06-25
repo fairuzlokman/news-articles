@@ -9,26 +9,27 @@ import Image from "next/image";
 import Header from "@/components/Header";
 
 export default function Home() {
-	const { data, isPending, fetchNextPage, isFetchingNextPage } =
-		useInfiniteQuery({
-			queryKey: ["headlines"],
-			queryFn: ({ pageParam = 1 }) => getHeadlines({ page: pageParam }),
-			getNextPageParam: (lastPage) => {
-				const totalPages = Math.ceil(lastPage.totalResults / 10);
-				if (lastPage.nextPage - 1 < totalPages) {
-					return lastPage.nextPage;
-				}
-			},
-		});
+	// const { data, isPending, fetchNextPage, isFetchingNextPage } =
+	// 	useInfiniteQuery({
+	// 		queryKey: ["headlines"],
+	// 		queryFn: ({ pageParam = 1 }) => getHeadlines({ page: pageParam }),
+	// 		getNextPageParam: (lastPage) => {
+	// 			const totalPages = Math.ceil(lastPage.totalResults / 10);
+	// 			if (lastPage.nextPage - 1 < totalPages) {
+	// 				return lastPage.nextPage;
+	// 			}
+	// 		},
+	// 	});
+
+	const isPending = true;
 
 	if (isPending) return <p>Loading...</p>;
+
+	const hasNextPage = !data.pageParams.includes(false);
 
 	const articles = data.pages.reduce((acc, page) => {
 		return [...acc, ...page.articles];
 	}, []);
-
-	const hasNextPage =
-		data.pageParams.length < Math.ceil(data.pages[0].totalResults / 10);
 
 	const [mainArticle, ...remainingArticles] = articles;
 
@@ -139,7 +140,6 @@ export default function Home() {
 						<div className="p-2">
 							<button
 								onClick={fetchNextPage}
-								// onClick={() => setPage((prev) => prev + 1)}
 								className="w-full py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
 							>
 								{isFetchingNextPage

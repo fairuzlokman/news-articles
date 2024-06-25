@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Header from "@/components/Header";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { getEverything, getHeadlines } from "@/services/news";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { getEverything } from "@/services/news";
 import { everythingData } from "../everything_data";
 import Link from "next/link";
 import dateFormatter from "@/helper/dateFormatter";
@@ -11,14 +11,28 @@ import Image from "next/image";
 const Page = ({ params }) => {
 	const search = decodeURIComponent(params.search);
 
-	// const { data, isPending } = useQuery({
-	// 	queryKey: ["everything", search],
-	// 	queryFn: () => getEverything(1, search), // Fix page = 1 for now
-	// });
+	// const { data, isPending, fetchNextPage, isFetchingNextPage } =
+	// 	useInfiniteQuery({
+	// 		queryKey: ["everything", search],
+	// 		queryFn: ({ pageParam = 1 }) =>
+	// 			getEverything({ page: pageParam, search }),
+	// 		getNextPageParam: (lastPage) => {
+	// 			const totalPages = Math.ceil(lastPage.totalResults / 10);
+	// 			if (lastPage.nextPage - 1 < totalPages) {
+	// 				return lastPage.nextPage;
+	// 			} else return false;
+	// 		},
+	// 	});
 
-	const isPending = false;
+	const isPending = true;
 
 	if (isPending) return <p>Loading...</p>;
+
+	const hasNextPage = !data.pageParams.includes(false);
+
+	const articles = data.pages.reduce((acc, page) => {
+		return [...acc, ...page.articles];
+	}, []);
 
 	return (
 		<div className="relative bg-fixed bg-cover bg-default-image">
@@ -32,7 +46,7 @@ const Page = ({ params }) => {
 							{search}
 						</p>
 					</div>
-					{everythingData.articles.map((item, index) => (
+					{articles.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
 							<div className="bg-white/85 rounded-[4.5px]">
 								<div className="flex gap-6 p-6 transition-all hover:bg-black/5 group">
@@ -104,12 +118,14 @@ const Page = ({ params }) => {
 							</div>
 						</Link>
 					))}
-					<button
-						onClick={() => setPage((prev) => prev + 1)}
-						className="py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
-					>
-						Load more
-					</button>
+					{hasNextPage && (
+						<button
+							onClick={fetchNextPage}
+							className="py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
+						>
+							{isFetchingNextPage ? "Loading..." : "Load more"}
+						</button>
+					)}
 				</div>
 			</div>
 		</div>
