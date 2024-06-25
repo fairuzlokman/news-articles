@@ -11,7 +11,7 @@ export const getEverything = async (page = 1, search) => {
 	return response.data;
 };
 
-export const getHeadlines = async (page = 1) => {
+export const getHeadlines = async ({ page = 1 }) => {
 	const response = await api.get(`/top-headlines`, {
 		params: {
 			pageSize: 10,
@@ -19,5 +19,5 @@ export const getHeadlines = async (page = 1) => {
 			country: "my",
 		},
 	});
-	return response.data;
+	return { ...response.data, nextPage: page + 1 };
 };

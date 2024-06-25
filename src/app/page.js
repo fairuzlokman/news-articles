@@ -1,5 +1,5 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { getHeadlines } from "@/services/news";
 import Link from "next/link";
 import { topHeadlinesData } from "./top_headlines_data";
@@ -9,16 +9,28 @@ import Image from "next/image";
 import Header from "@/components/Header";
 
 export default function Home() {
-	// const { data, isPending } = useQuery({
-	// 	queryKey: ["headlines"],
-	// 	queryFn: getHeadlines,
-	// });
-
-	const isPending = false;
+	const { data, isPending, fetchNextPage, isFetchingNextPage } =
+		useInfiniteQuery({
+			queryKey: ["headlines"],
+			queryFn: ({ pageParam = 1 }) => getHeadlines({ page: pageParam }),
+			getNextPageParam: (lastPage) => {
+				const totalPages = Math.ceil(lastPage.totalResults / 10);
+				if (lastPage.nextPage - 1 < totalPages) {
+					return lastPage.nextPage;
+				}
+			},
+		});
 
 	if (isPending) return <p>Loading...</p>;
 
-	const [heroData, ...remainingData] = topHeadlinesData.articles;
+	const articles = data.pages.reduce((acc, page) => {
+		return [...acc, ...page.articles];
+	}, []);
+
+	const hasNextPage =
+		data.pageParams.length < Math.ceil(data.pages[0].totalResults / 10);
+
+	const [mainArticle, ...remainingArticles] = articles;
 
 	return (
 		<div className="relative bg-cover bg-default-image">
@@ -26,17 +38,20 @@ export default function Home() {
 			<Header />
 			<div className="max-w-[1280px] z-10 relative m-auto grid h-[calc(100vh-56px)] grid-cols-5">
 				<Link
-					href={heroData.url}
+					href={mainArticle.url}
 					target="_blank"
 					className="col-span-3 bg-white/85 group"
 				>
 					<div className="flex flex-col h-full p-[30px]">
 						<div className="flex items-center justify-between">
 							<div className="flex gap-2">
-								<p>{heroData.author ?? heroData.source.name}</p>
+								<p>
+									{mainArticle.author ??
+										mainArticle.source.name}
+								</p>
 								|
 								<p className="text-black/50">
-									{dateFormatter(heroData.publishedAt)}
+									{dateFormatter(mainArticle.publishedAt)}
 								</p>
 							</div>
 							<svg
@@ -53,10 +68,10 @@ export default function Home() {
 							</svg>
 						</div>
 						<div className="w-full h-[45vh] mt-5 mb-[30px] rounded-[4.5px] overflow-clip">
-							{heroData.urlToImage ? (
+							{mainArticle.urlToImage ? (
 								<Image
-									src={heroData.urlToImage}
-									alt={`${heroData.title} image`}
+									src={mainArticle.urlToImage}
+									alt={`${mainArticle.title} image`}
 									width={500}
 									height={500}
 									className="object-cover w-full h-full"
@@ -82,16 +97,16 @@ export default function Home() {
 						</div>
 						<div className="space-y-2">
 							<p className="text-xl font-semibold line-clamp-3">
-								{heroData.title}
+								{mainArticle.title}
 							</p>
 							<p className="line-clamp-4">
-								{heroData.description}
+								{mainArticle.description}
 							</p>
 						</div>
 					</div>
 				</Link>
 				<div className="col-span-2 overflow-y-scroll bg-white">
-					{...remainingData.map((item, index) => (
+					{...remainingArticles.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
 							<div className="flex flex-col gap-2 p-6 transition-all border-b group hover:bg-black/5">
 								<div className="flex gap-2 text-sm">
@@ -120,14 +135,19 @@ export default function Home() {
 							</div>
 						</Link>
 					))}
-					<div className="p-2">
-						<button
-							// onClick={() => setPage((prev) => prev + 1)}
-							className="w-full py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
-						>
-							Load more
-						</button>
-					</div>
+					{hasNextPage && (
+						<div className="p-2">
+							<button
+								onClick={fetchNextPage}
+								// onClick={() => setPage((prev) => prev + 1)}
+								className="w-full py-2 text-sm font-semibold text-white transition-all bg-blue-600 rounded-full hover:bg-blue-500"
+							>
+								{isFetchingNextPage
+									? "Loading..."
+									: "Load more"}
+							</button>
+						</div>
+					)}
 				</div>
 			</div>
 		</div>

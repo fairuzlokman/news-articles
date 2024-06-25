@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { getEverything } from "@/services/news";
+import { getEverything, getHeadlines } from "@/services/news";
 import { everythingData } from "../everything_data";
 import Link from "next/link";
 import dateFormatter from "@/helper/dateFormatter";
