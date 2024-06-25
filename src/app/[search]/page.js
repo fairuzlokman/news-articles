@@ -37,7 +37,7 @@ const Page = ({ params }) => {
 			<div className="absolute w-full h-full bg-black/30" />
 			<Header />
 			<div className="overflow-y-scroll h-[calc(100vh-56px)] relative z-10">
-				<div className="max-w-[1280px] px-5 pb-5 flex flex-col gap-1 m-auto relative">
+				<div className="max-w-[1280px] md:px-5 md:pb-5 pb-1 flex flex-col gap-1 m-auto relative">
 					<div className="px-6 py-3 bg-white">
 						<p>
 							<span className="font-semibold">Search:</span>{" "}
@@ -46,17 +46,17 @@ const Page = ({ params }) => {
 					</div>
 					{articles.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
-							<div className="bg-white/85 rounded-[4.5px]">
-								<div className="flex gap-6 p-6 transition-all hover:bg-black/5 group">
+							<div className="bg-white/85 md:rounded-[4.5px]">
+								<div className="flex flex-col gap-6 p-6 transition-all md:flex-row hover:bg-black/5 group">
 									<div>
-										<div className="h-[200px] w-[350px]">
+										<div className="md:h-[200px] md:w-[350px] w-full rounded-[4.5px] overflow-clip aspect-video md:aspect-auto">
 											{item.urlToImage ? (
 												<Image
 													src={item.urlToImage}
 													alt={`${item.title} image`}
 													width={500}
 													height={500}
-													className="object-cover w-full h-full rounded-[4.5px]"
+													className="object-cover w-full h-full"
 												/>
 											) : (
 												<div className="flex items-center justify-center w-full h-full gap-2 text-white bg-fixed bg-cover bg-default-image">
@@ -80,12 +80,14 @@ const Page = ({ params }) => {
 									</div>
 									<div className="flex flex-col w-full gap-2">
 										<div className="flex justify-between">
-											<div className="flex gap-2 text-sm">
+											<div className="flex flex-col gap-2 text-sm lg:flex-row">
 												<p>
 													{item.author ??
 														item.source.name}
 												</p>
-												|
+												<p className="hidden lg:block">
+													|
+												</p>
 												<p className="text-black/50">
 													{dateFormatter(
 														item.publishedAt
@@ -108,7 +110,7 @@ const Page = ({ params }) => {
 										<p className="text-xl font-semibold">
 											{item.title}
 										</p>
-										<p className="line-clamp-4">
+										<p className="md:line-clamp-4">
 											{item.description}
 										</p>
 									</div>
