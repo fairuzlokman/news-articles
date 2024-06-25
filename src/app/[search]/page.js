@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { getEverything } from "@/services/news";
 import { everythingData } from "../everything_data";
 import Link from "next/link";
@@ -10,22 +10,31 @@ import Image from "next/image";
 
 const Page = ({ params }) => {
 	const search = params.search;
+	const [page, setPage] = useState(1);
+	const [list, setList] = useState([]);
 
 	// const { data, isPending } = useQuery({
-	// 	queryKey: ["everything", search],
-	// 	queryFn: () => getEverything(search),
+	// 	queryKey: ["everything", page, search],
+	// 	queryFn: () => getEverything(page, search),
+	// 	keepPreviousData: true,
 	// });
 
 	const isPending = false;
 
-	if (isPending) return <p>Loading...</p>;
+	// useEffect(() => {
+	// 	if (!isPending && data) {
+	// 		setList((prev) => [...prev, ...data.articles]);
+	// 	}
+	// }, [data, isPending]);
+
+	// if (isPending) return <p>Loading...</p>;
 
 	return (
 		<div className="relative bg-fixed bg-cover bg-default-image">
 			<div className="absolute w-full h-full bg-black/30" />
 			<Header />
-			<div className="overflow-y-scroll h-[calc(100vh-56px)] relative z-10 no-scrollbar">
-				<div className="max-w-[1280px] px-5 flex flex-col gap-1 m-auto relative">
+			<div className="overflow-y-scroll h-[calc(100vh-56px)] relative z-10">
+				<div className="max-w-[1280px] px-5 pb-5 flex flex-col gap-1 m-auto relative">
 					<div className="px-6 py-3 bg-white">
 						<p>
 							<span className="font-semibold">Search:</span>{" "}
@@ -104,6 +113,12 @@ const Page = ({ params }) => {
 							</div>
 						</Link>
 					))}
+					<button
+						onClick={() => setPage((prev) => prev + 1)}
+						className="py-2 text-sm font-semibold bg-white rounded-full"
+					>
+						Load more
+					</button>
 				</div>
 			</div>
 		</div>

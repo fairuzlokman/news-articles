@@ -9,16 +9,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 
 export default function Home() {
-	const { data, isPending } = useQuery({
-		queryKey: ["headlines"],
-		queryFn: getHeadlines,
-	});
+	// const { data, isPending } = useQuery({
+	// 	queryKey: ["headlines"],
+	// 	queryFn: getHeadlines,
+	// });
 
-	// const isPending = false;
+	const isPending = false;
 
 	if (isPending) return <p>Loading...</p>;
 
-	const [heroData, ...remainingData] = data.articles;
+	const [heroData, ...remainingData] = topHeadlinesData.articles;
 
 	return (
 		<div className="relative bg-cover bg-default-image">
@@ -75,7 +75,7 @@ export default function Home() {
 						</div>
 					</div>
 				</Link>
-				<div className="col-span-2 overflow-y-scroll bg-white scrollbar">
+				<div className="col-span-2 overflow-y-scroll bg-white">
 					{...remainingData.map((item, index) => (
 						<Link key={index} href={item.url} target="_blank">
 							<div className="flex flex-col gap-2 p-6 transition-all border-b hover:bg-black/5">
